@@ -1,7 +1,3 @@
-#include <iostream>
-#include<string>
-#include <climits>
-using namespace std;
 
 
 int readNumber(string message, int min = INT_MIN, int max = INT_MAX)
