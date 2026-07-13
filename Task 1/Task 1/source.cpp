@@ -252,20 +252,14 @@ int numOfFailingStudents(int** marks, int numberOfStudents)
 int main()
 {
     int numberOfStudents = readNumber("Enter the number of students: ", 1);
-
     int** marks = collectStudentsMarks(numberOfStudents);
 
     int choice;
-
     do {
-
         cout << "\n\n1_Show all students." << endl;
         cout << "2_Show Statistics." << endl;
         cout << "3_exit\n\n" << endl;
-
         choice = readNumber("chose number: ", 1, 3);
-
-
         switch (choice) {
         case 1:
             printAllStudents(marks, numberOfStudents);
