@@ -17,6 +17,7 @@ int readNumber(string message, int min = INT_MIN, int max = INT_MAX)
         {
             cout << "Invalid number! Enter a value between "
                 << min << " and " << max << endl;
+                
         }
 
     } while (num < min || num > max);
