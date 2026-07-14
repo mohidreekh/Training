@@ -22,7 +22,7 @@ int main() {
 
     for(int i = 0; i < nums.size(); i++)
     {
-        int tryNum = target - nums[0];
+        int tryNum = target - nums[i];
         
         if(mNums.find(tryNum) != mNums.end() && i != mNums[tryNum]){
             cout << "[ " << i << " , " << mNums[tryNum] << " ]";
