@@ -2,9 +2,7 @@
 #include<algorithm>
 #include<unordered_map>
 
-
 using namespace std;
-
 
 
 int main() {
@@ -14,50 +12,23 @@ int main() {
 	vector <int> nums = { 3,3 };
 	int target = 6;
 
+	unordered_map<int, int> mNums;
 
-	sort(nums.begin(), nums.end());
-
-	int left = 0;
-	int right = nums.size() - 1;
-
-	for (int i = 0; i < nums.size(); i++) {
-		if (nums[left] + nums[right] == target)
-		{
-			cout << "[ " << left << " , " << right << " ]";
-			break;
-		}
-		else if (nums[left] + nums[right] > target)
-		{
-			right--;
-		}
-		else {
-			left++;
-		}
+	for (int i = 0; i < nums.size(); i++)
+	{
+		mNums[nums[i]] = i;
 
 	}
 
+    for(int i = 0; i < nums.size(); i++)
+    {
+        int tryNum = target - nums[0];
+        
+        if(mNums.find(tryNum) != mNums.end() && i != mNums[tryNum]){
+            cout << "[ " << i << " , " << mNums[tryNum] << " ]";
+			break;
+        }
 
-
-
-	//unordered_map<int, int> mNums;
-
-	//for (int i = 0; i < nums.size(); i++)
-	//{
-	//	mNums[nums[i]] = i;
-
-	//	int tryNum = target - nums[i];
-
-	//}
-
-	//for (auto item : mNums) {
-
-	//	int tryNum = target - item.first;
-
-	//	if (mNums.find(tryNum) != mNums.end() && mNums[tryNum] != item.second)
-	//	{
-	//		cout << "[ " << item.second << " , " << mNums[tryNum] << " ]";
-	//		break;
-	//	}
-	//}
+    }
 
 }
