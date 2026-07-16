@@ -30,19 +30,14 @@ bool Bank::isAccountNumberUnique(const string& accountNumber) const {
 void Bank::createSavingAccount()
 {
     cout << "\n========== Create Savings Account ==========\n";
-
     string randomAccountNumber = getUniqueNumber();
-
     auto account = AccountFactory::createSavingAccount(randomAccountNumber);
-
     if (account == nullptr)
     {
         cout << "Failed to create savings account.\n";
         return;
     }
-
     _accounts.push_back(std::move(account));
-
     cout << "Savings Account created successfully!\n";
     cout << "Account Number : " << randomAccountNumber << endl;
 }
@@ -97,7 +92,6 @@ void Bank::withdraw()
         cout << "Error: Account not found.\n";
     }
 }
-
 
 Account* Bank::searchByAccountNumber(const string& accountNumber) const {
     for (const auto& acc : _accounts) {
