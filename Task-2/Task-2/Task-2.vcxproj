@@ -140,16 +140,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
+    <ClCompile Include="AccountFactory.cpp" />
     <ClCompile Include="Bank.cpp" />
     <ClCompile Include="CheckingAccount.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SavingAccount.cpp" />
+    <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
+    <ClInclude Include="AccountFactory.h" />
     <ClInclude Include="Bank.h" />
     <ClInclude Include="CheckingAccount.h" />
     <ClInclude Include="SavingAccount.h" />
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

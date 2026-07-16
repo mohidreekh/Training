@@ -13,7 +13,10 @@ private:
 
     bool isAccountNumberUnique(const string& accountNumber) const;
 
+    string getUniqueNumber();
+
 public:
+
     void createSavingAccount();
 
     void createCheckingAccount();
@@ -29,6 +32,4 @@ public:
     void displayAllAccounts() const;
 
     void deleteAccount();
-
-    void displayMenu();
 };
