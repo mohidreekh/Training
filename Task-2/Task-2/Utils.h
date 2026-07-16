@@ -6,7 +6,6 @@ using namespace std;
 
 class Utils {
 public:
-
 	static bool isValidNumber(const std::string& input);
 
 	static double readNumber(string message, int min = INT_MIN, int max = INT_MAX);

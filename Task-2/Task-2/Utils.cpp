@@ -25,7 +25,6 @@ bool Utils::isValidNumber(const string& input)
     return true;
 }
 
-
 double Utils::readNumber(string message, int min, int max)
 {
     string input;
@@ -54,7 +53,6 @@ double Utils::readNumber(string message, int min, int max)
     }
 }
 
-
 string Utils::readAccountNumber(string message, int len)
 {
     string input;
@@ -80,8 +78,6 @@ string Utils::readAccountNumber(string message, int len)
         return input;
     }
 }
-
-
 
 string Utils::generateRandomNumber(int length)
 {

@@ -21,5 +21,4 @@ public:
     bool withdraw(double amount) override;
 
     void displayAccountInfo() const override;
-
 };

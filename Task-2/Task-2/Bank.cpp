@@ -8,7 +8,6 @@
 
 using namespace std;
 
-
 string Bank::getUniqueNumber() {
     string accNum;
     do
@@ -82,18 +81,13 @@ void Bank::deposit() {
 
 void Bank::withdraw()
 {
-    string accNum = Utils::readAccountNumber(
-        "\nEnter Account Number: "
-    );
+    string accNum = Utils::readAccountNumber("\nEnter Account Number: ");
 
     Account* acc = searchByAccountNumber(accNum);
 
     if (acc)
     {
-        double amount = Utils::readNumber(
-            "Enter Withdrawal Amount: $",
-            1
-        );
+        double amount = Utils::readNumber("Enter Withdrawal Amount: $", 1);
 
         acc->withdraw(amount);
         cout << "You withdrew " + to_string(amount) + "$ successfully\n";

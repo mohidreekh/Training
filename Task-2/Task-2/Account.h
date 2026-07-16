@@ -15,15 +15,12 @@ public:
         string accountHolderName,
         double balance);
 
-
     virtual ~Account() = default;
 
     void setAccountNumber(string accountNumber);
     
-
     void setAccountHolderName(string accountHolderName);
     
-
     void setBalance(double balance);
 
     string getAccountNumber() const;
@@ -32,12 +29,9 @@ public:
 
     double getBalance() const;
 
-
     virtual bool deposit(double amount);
 
     virtual bool withdraw(double amount) = 0;
 
     virtual void displayAccountInfo() const;
-
-
 };

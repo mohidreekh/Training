@@ -14,12 +14,8 @@ unique_ptr<Account> AccountFactory::createCheckingAccount(string accountNumber =
     string name;
     double initialBalance, limit;
 
-    cout << "Enter Account Holder Name: ";
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    getline(cin, name);
-
+    name = Utils::readString("Enter Account Holder Name: ");
     initialBalance = Utils::readNumber("Enter Initial Balance: $",50);
-
     limit = Utils::readNumber("Enter Overdraft Limit: $",0);
 
     return make_unique<CheckingAccount>(accountNumber, name, initialBalance, limit);
@@ -30,12 +26,8 @@ std::unique_ptr<Account> AccountFactory::createSavingAccount(string accountNumbe
     string name;
     double initialBalance, rate;
 
-    cout << "Enter Account Holder Name: ";
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    getline(cin, name);
-
+    name = Utils::readString("Enter Account Holder Name: ");
     initialBalance = Utils::readNumber("Enter Initial Balance: $", 0);
-
     rate = Utils::readNumber("Enter Interest Rate: ", 0);
 
     return make_unique<SavingAccount>(accountNumber, name, initialBalance, rate);

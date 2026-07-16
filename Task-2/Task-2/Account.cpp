@@ -55,5 +55,4 @@ void Account::displayAccountInfo() const
     cout << "Account Holder: " << _accountHolderName << endl;
     cout << "Balance: " << _balance << endl;
     cout << "**********************************************\n";
-
 }
