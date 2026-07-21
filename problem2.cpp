@@ -27,7 +27,7 @@ Node* insert(Node* root, int val) {
 }
 
 void kthSmallestValue(Node* root, int &k, int &result) {
-    if (root == nullptr || k < 0)
+    if (root == nullptr || k <= 0)
         return;
 
     kthSmallestValue(root->left, k, result);
@@ -41,13 +41,13 @@ void kthSmallestValue(Node* root, int &k, int &result) {
 int main() {
 	Node* root = nullptr;
 
-    int arr[10] = { 5,6,3,2,4,1 };
+    int arr[] = { 5,6,3,2,4,1 };
     int k = 3;
 
     int x;
-	for (int i = 0; i < 6; i++)
+	for (auto i : arr)
 	{
-		root = insert(root, arr[i]);
+		root = insert(root, i);
 	}
 
     int result;
