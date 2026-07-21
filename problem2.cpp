@@ -1,13 +1,11 @@
 #include <iostream>
 #include<algorithm>
 using namespace std;
-
 struct Node {
 	int item;
 	Node* left;
 	Node* right;
 };
-
 
 Node* insert(Node* root, int val) {
 
@@ -28,28 +26,20 @@ Node* insert(Node* root, int val) {
     return root;
 }
 
-
-int kthSmallestValue(Node* root, int &k, int &result) {
-    if (root == nullptr)
-        return 0;
+void kthSmallestValue(Node* root, int &k, int &result) {
+    if (root == nullptr || k < 0)
+        return;
 
     kthSmallestValue(root->left, k, result);
 
-    k--;
-    if (k > 0) {
-        cout << root->item << "  ";
-    }
-    else if(k == 0)
+    if (--k == 0)
         result = root->item;
     
-
     kthSmallestValue(root->right, k, result);
-
 }
 
 int main() {
-	Node* root = new Node;
-    root = nullptr;
+	Node* root = nullptr;
 
     int arr[10] = { 5,6,3,2,4,1 };
     int k = 3;
@@ -61,6 +51,6 @@ int main() {
 	}
 
     int result;
-    cout << kthSmallestValue(root, k, result);
-    cout << "\n Result:" << result;
+    kthSmallestValue(root, k, result);
+    cout << "Result:" << result;
 }
