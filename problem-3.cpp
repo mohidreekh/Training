@@ -10,7 +10,7 @@ struct Node {
     Node(int n) : item(n), left(nullptr), right(nullptr) {}
 };
 
-void getNumbersFromTree(Node* root, string &number, vector<string> &numbers) {
+void getNumbersFromTree(Node* root, string& number, vector<string>& numbers) {
 
     if (root == nullptr)
         return;
@@ -37,6 +37,25 @@ int getSumOfArray(vector<string>numbers) {
     return sum;
 }
 
+void sumRootTOLeaf(Node* root, int value, int & sum) {
+
+    if (root == nullptr) {
+        return;
+    }
+
+    value = (value * 10) + root->item;
+
+    if (root->left == nullptr && root->right == nullptr) {
+        sum += value;
+    }
+    else
+    {
+        sumRootTOLeaf(root->left, value, sum);
+        sumRootTOLeaf(root->right, value, sum);
+    }
+    
+}
+
 int main() {
     //Node* root = new Node(1);
     //root->left = new Node(2);
@@ -48,10 +67,16 @@ int main() {
     root->left->left = new Node(5);
     root->left->right = new Node(1);
 
+
+    //First Solution
     string number;
     vector<string> numbers;
-
     getNumbersFromTree(root, number, numbers);
-
     cout << "\nSum = " << getSumOfArray(numbers) << endl;
+
+    //second solution (optimal)
+    int sum = 0;
+    int value = 0;
+    sumRootTOLeaf(root, value, sum);
+    cout << "\nSecond Sum = " << sum << endl;
 }
